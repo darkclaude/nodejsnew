@@ -28,7 +28,7 @@ var connection_string = '127.0.0.1:27017/nodekeyz';
   
 mongoose.connect("mongodb://"+connection_string+"/nodekeyz");
 admindb = mongoose.createConnection("mongodb://"+connection_string+"/admins");
-
+datadb = mongoose.createConnection("mongodb://"+connection_string+"/data");
 app.use('/favicon.ico', express.static('views/favicon.ico'));
 app.use('/auth',express.static(__dirname + '/views'));
 app.use('/house', express.static(__dirname + '/views'));
@@ -54,6 +54,7 @@ app.use(passport.session());
 app.use(flash());
 require('./app/models/user');
 require('./app/models/admin');
+require('./app/models/data');
 app.set('view engine', 'ejs');
 var ip = express.Router();
 var auth = express.Router();
