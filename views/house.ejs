@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='house'>
+<head>
+	<title>House</title>
+	<script src="angular.min.js"></script>
+	<script src="housecontrol.js"></script>
+	<link rel="stylesheet"  href="css/bootstrap.min.css">
+	<style>
+body {
+	padding: 200px;
+}
+	</style>
+
+</head>
+
+<body ng-controller="housecontrol">
+<div align="center" >
+<h1> CLICK ANY BUTTON </h1><br>
+<h2>  POT VALUE = <font color="green">{{pot}}</font></h2><br>
+<p > <font color={{cl}}> {{info}}</font></p>
+<button style="width:200px;height:120px"class="btn btn-success btn-lg" ng-click="on()">ON</button><br>
+<p></p><br>
+<button  style="width:200px;height:120px" class="btn btn-danger btn-lg" ng-click="off()">OFF</button>
+</div>
+
+</body>
+</html>

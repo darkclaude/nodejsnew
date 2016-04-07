@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app ng-init="c='.....'">
+<head>
+    <title>DATA PANEL</title>
+     <script src = "angular.min.js"></script>
+ <script src="control.js"></script>
+    <script src="raphael-2.1.4.min.js"></script>
+    <script src="justgage.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body ng-init="cl='green'">
+<div class="container"  ng-controller="AppCtrl" ng-init=" t=''">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span>Data FROM NODES</h1>
+        <a href="/profile" class="btn btn-info btn-sm">Profile</a>
+        <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h2><span class="fa fa-user"></span><font color="red"><strong>DATA STREAM</strong></font></h2>
+
+                    <p>
+                        <strong><h1>{{c}}</h1></strong> <br>
+                        <strong><h2 style="color:blue">TEMPERATURE : {{datalist.temp}}</h2></strong><br>
+                        <strong><h2 style="color:orange">HUMIDITY: {{datalist.hum}}</h2></strong><br>
+                        <strong><h2 style="color:green">SOLAR Volt: {{datalist.pot}}</h2></strong><br>
+                        <button class="btn btn-success" ng-click="ss()" >Send Value(ADC)</button>
+                        <input class="form-control" ng-model="tms"></td>
+                        <strong><h2 style="color:blue">{{mat}}</h2></strong>
+                      
+                    </p>
+
+            </div>
+        </div>
+   <div class="col-sm-6">
+            <div class="well">
+                <h3 class="text-warning"><span class="fa fa-cogs"></span>Status To Server</h3>
+
+                    <p>
+                        <strong>Status</strong>:<font color={{cl}}> <strong>{{t}}</strong></font>
+                        <div id="gauge" class="300x300px"></div>
+                         <div id="gauge1" class="300x300px"></div>
+                          <div id="gauge2" class="300x300px"></div>
+
+
+                        
+                    </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

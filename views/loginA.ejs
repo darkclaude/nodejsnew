@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>Admin Authentication</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- load fontawesome -->
+     <link rel="stylesheet"  type="text/css" href="css/m2.css">
+<style>
+      body { padding-top:80px; }
+
+</style>
+    
+</head>
+<body background="css/admin3.jpe">
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><img src="css/ait.png"><font color="black"><span class="fa fa-sign-in"></span></font><b><font color="yellow"> Administrator <font color="black">Login</font></font></b></h1>
+
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/auth/admin-login" method="post">
+        <div class="form-group">
+            <label><font color="black" size="5"><b>Username</b></font></label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label><font color="black" size="5"><b>Password</b></font></label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg"><b>Login</b></button>
+    </form>
+
+    <hr>
+
+        <p> <a href="/auth"><b>Homepage</b></a></p>
+
+</div>
+
+</div>
+</body>
+</html>
